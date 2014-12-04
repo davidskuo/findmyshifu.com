@@ -1,0 +1,110 @@
+<html>
+<head>
+<style>
+body {
+   
+   background-color: #ccccee;
+}
+
+p {
+   color: #ff0000;
+   text-align: left;
+}   
+
+h1 {
+	color: #0000ff;
+}
+
+</style>
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<meta charset=utf-8 />
+
+  <title>Question Answered</title>
+</head>
+<body>
+
+
+<script language="JavaScript"> 
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah')
+                .attr('src', e.target.result)
+                .width(400)
+                .height(200);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+
+</script>
+
+<h1>Upload Your Questions</h1>
+
+<form enctype="multipart/form-data" action="uploadimg.php" method=post>
+  Your Grade:
+  
+  <input type="radio" name="grade" value="7th" /> 7th | 
+  <input type="radio" name="grade" value="8th" /> 8th | 
+  <input type="radio" name="grade" value="9th" /> 9th | 
+  <input type="radio" name="grade" value="10th" /> 10th | 
+  <input type="radio" name="grade" value="11th" checked/> 11th | 
+  <input type="radio" name="grade" value="12th" /> 12th 
+  </br>
+ 
+  
+  Subject: 
+  
+  <input type="radio" name="subject" value="Math" checked /> Math |
+  <input type="radio" name="subject" value="Chemistry" /> Chemistry |
+  <input type="radio" name="subject" value="Biology" /> Biology |
+  <input type="radio" name="subject" value="Physics" /> Physics |
+  <input type="radio" name="subject" value="Chinese" /> Chinese | 
+  <input type="radio" name="subject" value="English" /> English 
+  </br>
+  </br>
+  <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+ 
+ 
+  Upload your Question (jpg, jpeg, png, gif): <input name="userfile" type="file" accept="image/gif, image/jpg, imag/jpeg, image/png" 
+  onchange="readURL(this);"/>
+  
+  	</br>
+    	<img id="blah" src="question.jpg" alt="question.jpg" />
+ 	 </br>
+  
+  or Type in Your Question/Note: </br> <Textarea name="notes" rows="5" cols="100"/>
+   </Textarea>
+ 	</br>
+  E-Mail Address: <input type="text" name="address" />
+    </br>
+  </br> 
+  Time Limit: 
+  <select name="timeL">
+    <option selected> Unlimited </option>
+    <option> 30 minutes </option>
+    <option> 1 hr </option>
+    <option> 2 hrs </option>
+    <option> 1 day </option>
+  </select>
+  
+  
+  Payment: 
+  <select name="payment">
+    <option selected> Free </option>
+    <option> NT 30 </option>
+    <option> NT 50 </option>
+  </select>
+  </br>
+  </br> 
+  <input type="submit" value="Upload">
+</form>
+</body>
+</html>
+
